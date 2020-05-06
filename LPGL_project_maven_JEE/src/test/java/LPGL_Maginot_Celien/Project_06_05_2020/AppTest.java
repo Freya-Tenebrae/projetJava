@@ -1,4 +1,4 @@
-package LPGL_Maginot_Celien.LPGL_project_maven_JEE;
+package LPGL_Maginot_Celien.Project_06_05_2020;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
