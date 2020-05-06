@@ -9,9 +9,9 @@ public class MySqlConnection {
 	private static String url = "jdbc:mysql://localhost:3306/project_joyeux";
 	private static String login = "root";
 	private static String password = "7RsVDDxnY2lxGuec1vF6";
-	Connection cn = null;
+	public static Connection cn;
 	
-	MySqlConnection(){
+	public static Connection getInstance() {
 		try
 		{
 			cn = DriverManager.getConnection(url, login, password);
@@ -20,6 +20,7 @@ public class MySqlConnection {
 		{
 			e.printStackTrace();
 		}
+	return cn;
 	}
 
 }
