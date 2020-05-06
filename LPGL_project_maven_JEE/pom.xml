@@ -3,11 +3,11 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>LPGL_Maginot_Celien</groupId>
-  <artifactId>LPGL_project_maven_JEE</artifactId>
+  <artifactId>TD5</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>jar</packaging>
 
-  <name>LPGL_project_maven_JEE</name>
+  <name>TD5</name>
   <url>http://maven.apache.org</url>
 
   <properties>
