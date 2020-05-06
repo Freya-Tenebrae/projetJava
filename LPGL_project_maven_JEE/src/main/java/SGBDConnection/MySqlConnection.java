@@ -1,4 +1,4 @@
-package Jdbc;
+package SGBDConnection;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
