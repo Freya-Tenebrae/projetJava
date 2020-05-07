@@ -1,25 +1,16 @@
-package Modeles;
+package InterfaceModeles;
 
-public class CompteSansDecouvert extends Compte {
-	
-	CompteSansDecouvert(String num, double s) {
-		super(num, s);
-	}
-	
+public interface iCompteAvecDecouvert {
 	/**************************
 	 *    GETTER & SETTER     *
 	 **************************/
-	
+	public void setDecouvertAutorise(Double dA);
+	public double getDecouvertAutoriese();
 	/**************************
 	 *        FUNCTION        *
 	 **************************/
-
-	public void debiter(double montant) {
-		// fait appel à la fonction débiter de compte
-	}
-	
+	public void debiter(double montant);
 	/**************************
 	 *    PRIVATE FUNCTION    *
 	 **************************/
-
 }

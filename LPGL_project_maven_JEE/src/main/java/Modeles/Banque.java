@@ -1,6 +1,22 @@
 package Modeles;
 
+import java.util.ArrayList;
+
+import Factory.ClientFactory;
+import Factory.CompteFactory;
+
 public class Banque {
+	
+	ClientFactory cl;
+	ArrayList<CompteFactory> numCompte = new ArrayList<CompteFactory>();
+			
+	/**************************
+	 *    GETTER & SETTER     *
+	 **************************/
+	
+	/**************************
+	 *        FUNCTION        *
+	 **************************/
 	
 	public void retrait(String num_Compte, String nom_Client, double montant) {
 		
@@ -27,5 +43,9 @@ public class Banque {
 		return montant;
 		
 	}
+	
+	/**************************
+	 *    PRIVATE FUNCTION    *
+	 **************************/
 
 }

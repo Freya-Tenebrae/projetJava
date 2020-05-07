@@ -12,6 +12,18 @@ public class Client {
 		nom = nm;
 	}
 	
+	/**************************
+	 *    GETTER & SETTER     *
+	 **************************/
+	
+	/**************************
+	 *        FUNCTION        *
+	 **************************/
+	
+	/**************************
+	 *    PRIVATE FUNCTION    *
+	 **************************/
+	
 	public void setNumeroClient(String num_Client) {
 		numeroClient = num_Client;
 	}

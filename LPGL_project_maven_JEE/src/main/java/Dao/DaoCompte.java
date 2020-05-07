@@ -5,36 +5,20 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import InterfacesDao.iBanqueDao;
+import InterfacesDao.iCompteDao;
 import SGBDConnection.MySqlConnection;
 
-public class DaoBanque implements iBanqueDao {
+public class DaoCompte implements iCompteDao {
 
 	private Connection sgbd = null;
 	
-	DaoBanque(){
+	DaoCompte(){
 		this.sgbd = MySqlConnection.getInstance();
 	}
 	
 	/**************************
 	 *         GETTER         *
 	 **************************/
-	
-	public String[] getClientById(String idClient) {
-		String[] client = new String[3];
-		ResultSet rs = Requete("SELECT * FROM project_joyeux.client c WHERE c.id_client = '" + idClient + "';");
-		try
-		{
-    		if(rs.next())
-    			for (int i = 0; i < 3; i++)
-    				client[i] = rs.getObject(i+1).toString();
-		}
-		catch (SQLException e)
-		{
-			e.printStackTrace();
-		}
-		return client;
-	}
 	
 	public String[] getListeCompteByClientId(String idClient) {
 		int numberOfCompteForThisId = getNombreCompteByClientId(idClient);
@@ -85,11 +69,6 @@ public class DaoBanque implements iBanqueDao {
 	 *         INSERT         *
 	 **************************/
 	
-	public boolean ajoutClient(String idClient, String nom_client, String adresse) {
-		return executeUpdate("INSERT INTO `project_joyeux`.`client` (`id_client`, `nom_client`, `adresse`) "
-				             + "VALUES ('" + idClient + "', '" + nom_client + "', '" + adresse + "');");
-	}
-	
 	public boolean ajoutCompte(String idCompte, String idClient, double solde, double decouvert) {
 		return executeUpdate("INSERT INTO `project_joyeux`.`compte` (`id_compte`, `id_client`, `solde_actuel`, `decouvert`) "
 				             + "VALUES ('" + idCompte + "', '" + idClient + "', '" + solde + "', '" + decouvert + "');");
@@ -98,11 +77,6 @@ public class DaoBanque implements iBanqueDao {
 	/**************************
 	 *         DELETE         *
 	 **************************/
-	
-	public boolean retireClientById(String idClient) {
-		return executeUpdate("DELETE FROM `project_joyeux`.`client` "
-				             + "WHERE (`id_client` = '" + idClient +"');");
-	}
 	
 	public boolean retireCompteById(String idCompte) {
 		return executeUpdate("DELETE FROM `project_joyeux`.`compte` "

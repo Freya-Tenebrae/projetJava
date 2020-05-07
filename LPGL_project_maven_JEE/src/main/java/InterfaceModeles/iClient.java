@@ -1,25 +1,19 @@
-package Modeles;
+package InterfaceModeles;
 
-public class CompteSansDecouvert extends Compte {
-	
-	CompteSansDecouvert(String num, double s) {
-		super(num, s);
-	}
-	
+public interface iClient {
 	/**************************
 	 *    GETTER & SETTER     *
 	 **************************/
-	
+	public void setNumeroClient(String num_Client);
+	public String getNumeroClient();
+	public void setAdresse(String ad);
+	public String getAdresse();
+	public void setNom(String nm);
+	public String getNom();
 	/**************************
 	 *        FUNCTION        *
 	 **************************/
-
-	public void debiter(double montant) {
-		// fait appel à la fonction débiter de compte
-	}
-	
 	/**************************
 	 *    PRIVATE FUNCTION    *
 	 **************************/
-
 }

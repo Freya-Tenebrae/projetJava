@@ -10,6 +10,10 @@ public class Compte {
 		solde = s;
 	}
 	
+	/**************************
+	 *    GETTER & SETTER     *
+	 **************************/
+	
 	public void setNumeroCompte(String num) {
 		numeroCompte = num;
 	}
@@ -26,12 +30,23 @@ public class Compte {
 		return solde;
 	}
 	
+	/**************************
+	 *        FUNCTION        *
+	 **************************/
+	
 	public void debiter(double montant) {
-		
+		//test si le compte peut être créditer
+		//test si l'opération en dao s'est bien effectuer
+		//affiche le nouveau solde
 	}
 	
 	public void crediter(double montant) {
-		
+		//test si l'opération en dao s'est bien effectuer
+		//affiche le nouveau solde
 	}
+	
+	/**************************
+	 *    PRIVATE FUNCTION    *
+	 **************************/
 
 }
