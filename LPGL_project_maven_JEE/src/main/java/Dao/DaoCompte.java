@@ -28,7 +28,7 @@ public class DaoCompte implements iCompteDao {
 		{
     		for (int i = 0; i < numberOfCompteForThisId; i++)
     			if(rs.next())
-    				listIdCompte[i] = rs.getObject(i+1).toString();
+    				listIdCompte[i] = rs.getObject(1).toString();
 		}
 		catch (SQLException e)
 		{
