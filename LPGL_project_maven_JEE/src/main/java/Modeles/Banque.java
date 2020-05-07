@@ -7,7 +7,7 @@ import Factory.CompteFactory;
 
 public class Banque {
 	
-	ClientFactory cl;
+	ClientFactory clFact;
 	ArrayList<CompteFactory> numCompte = new ArrayList<CompteFactory>();
 			
 	/**************************
