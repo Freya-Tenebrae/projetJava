@@ -7,10 +7,10 @@ public interface iBanque {
 	/**************************
 	 *        FUNCTION        *
 	 **************************/
-	public void retrait(String num_Compte, String nom_Client, double montant);
-	public void depot(String num_Compte, String nom_Client, double montant);
+	public Boolean retrait(String num_Compte, double montant);
+	public Boolean depot(String num_Compte, double montant);
 	public void ouverture_compte(String nom_Client);
-	public void consultation(String num_Compte);
+	public Boolean consultation(String num_Compte);
 	public double conversionFromEuro(double montant);
 	public double conversionToEuro(double montant);
 	/**************************

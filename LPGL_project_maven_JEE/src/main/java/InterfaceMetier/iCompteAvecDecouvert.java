@@ -4,8 +4,6 @@ public interface iCompteAvecDecouvert {
 	/**************************
 	 *    GETTER & SETTER     *
 	 **************************/
-	public void setDecouvertAutorise(Double dA);
-	public double getDecouvertAutoriese();
 	/**************************
 	 *        FUNCTION        *
 	 **************************/

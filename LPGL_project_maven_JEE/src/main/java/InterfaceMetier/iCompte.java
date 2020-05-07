@@ -1,6 +1,6 @@
 package InterfaceMetier;
 
-public interface ICompte {
+public interface iCompte {
 	/**************************
 	 *    GETTER & SETTER     *
 	 **************************/

@@ -1,6 +1,8 @@
 package Metier;
 
-public class CompteAvecDecouvert extends Compte {
+import InterfaceMetier.iCompteAvecDecouvert;
+
+public class CompteAvecDecouvert extends Compte implements iCompteAvecDecouvert {
 
 	double decouvertAutorise;
 	

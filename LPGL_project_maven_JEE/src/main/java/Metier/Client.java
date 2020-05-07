@@ -1,6 +1,8 @@
 package Metier;
 
-public class Client {
+import InterfaceMetier.iClient;
+
+public class Client implements iClient{
 	
 	String numeroClient;
 	String adresse;

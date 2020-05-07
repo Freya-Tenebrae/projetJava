@@ -4,13 +4,15 @@ import java.util.ArrayList;
 
 import Factory.ClientFactory;
 import Factory.CompteFactory;
+import InterfaceMetier.iBanque;
+import InterfacesDao.iCompteDao;
 
-public class Banque {
+public class Banque implements iBanque{
 
 	Client cl;
 	ArrayList<Compte> listeCompte = new ArrayList<Compte>();
 	
-	Banque(){
+	public Banque(){
 
 	}
 			
@@ -22,20 +24,26 @@ public class Banque {
 	 *        FUNCTION        *
 	 **************************/
 	
-	public void retrait(String num_Compte, double montant) {
+	public Boolean retrait(String num_Compte, double montant) {
 		for (int i = 0; i < listeCompte.size(); i++) {
-			if (listeCompte.get(i).getNumeroCompte() == num_Compte) {
-				listeCompte.get(i).debiter(montant);
+			if (listeCompte.get(i).getNumeroCompte().equals(num_Compte)) {
+				if (listeCompte.get(i).debiter(montant)) {
+					return true;
+				}
 			}
 		}
+		return false;
 	}
 	
-	public void depot(String num_Compte, double montant) {
+	public Boolean depot(String num_Compte, double montant) {
 		for (int i = 0; i < listeCompte.size(); i++) {
-			if (listeCompte.get(i).getNumeroCompte() == num_Compte) {
-				listeCompte.get(i).crediter(montant);
+			if (listeCompte.get(i).getNumeroCompte().equals(num_Compte)) {
+				if (listeCompte.get(i).crediter(montant)) {
+					return true;
+				}
 			}
 		}
+		return false;
 	}
 	
 	public void ouverture_compte(String nom_Client) {
@@ -48,22 +56,22 @@ public class Banque {
 		}
 	}
 	
-	public void consultation(String num_Compte) {
+	public Boolean consultation(String num_Compte) {
 		for (int i = 0; i < listeCompte.size(); i++) {
-			if (listeCompte.get(i).getNumeroCompte() == num_Compte) {
+			if (listeCompte.get(i).getNumeroCompte().equals(num_Compte)) {
 				System.out.println("le compte " + num_Compte + " possède un solde de " + listeCompte.get(i).getSolde() + " euro.");
+				return true;
 			}
 		}
+		return false;
 	}
 	
 	public double conversionFromEuro(double montant) {
 		return montant;
-		
 	}
 	
 	public double conversionToEuro(double montant) {
 		return montant;
-		
 	}
 	
 	/**************************

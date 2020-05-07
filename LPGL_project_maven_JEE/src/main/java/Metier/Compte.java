@@ -1,8 +1,9 @@
 package Metier;
 
 import Dao.DaoCompte;
+import InterfaceMetier.iCompte;
 
-public class Compte {
+public class Compte implements iCompte{
 	
 	double solde;
 	String numeroCompte;
