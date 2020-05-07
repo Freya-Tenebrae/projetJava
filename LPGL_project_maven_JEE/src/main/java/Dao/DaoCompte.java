@@ -12,7 +12,7 @@ public class DaoCompte implements iCompteDao {
 
 	private Connection sgbd = null;
 	
-	DaoCompte(){
+	public DaoCompte(){
 		this.sgbd = MySqlConnection.getInstance();
 	}
 	

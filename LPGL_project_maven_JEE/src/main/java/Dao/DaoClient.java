@@ -12,7 +12,7 @@ public class DaoClient implements iClientDao {
 
 	private Connection sgbd = null;
 	
-	DaoClient(){
+	public DaoClient(){
 		this.sgbd = MySqlConnection.getInstance();
 	}
 	

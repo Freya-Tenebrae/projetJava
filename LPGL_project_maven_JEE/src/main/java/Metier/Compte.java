@@ -1,13 +1,17 @@
 package Metier;
 
+import Dao.DaoCompte;
+
 public class Compte {
 	
 	double solde;
 	String numeroCompte;
+	DaoCompte dao;
 	
-	Compte(String num, double s){
+	public Compte(String num, double s){
 		numeroCompte = num;
 		solde = s;
+		dao = new DaoCompte();
 	}
 	
 	/**************************
@@ -35,14 +39,36 @@ public class Compte {
 	 **************************/
 	
 	public void debiter(double montant) {
-		//test si le compte peut être créditer
-		//test si l'opération en dao s'est bien effectuer
-		//affiche le nouveau solde
+		if (solde > montant)
+		{
+			System.out.println("le compte possède un solde sufisant pour débiter le montant");
+			if (dao.updatingSoldeByCompteId(numeroCompte, solde - montant))
+			{
+				solde = solde - montant;
+				System.out.println("la transaction s'est bien déroulée");
+				System.out.println("le solde restant est de " + solde + " euro.");
+			}
+			else
+			{
+				System.out.println("une erreur à eu lieu au niveau de la base de donnée, la transaction est annulée");
+			}
+		}
+		else
+		{
+			System.out.println("le compte ne possède pas un solde sufisant pour débiter le montant");
+		}
 	}
 	
 	public void crediter(double montant) {
-		//test si l'opération en dao s'est bien effectuer
-		//affiche le nouveau solde
+		if (dao.updatingSoldeByCompteId(numeroCompte, solde + montant))
+		{
+			solde = solde + montant;
+			System.out.println("la transaction s'est bien déroulée");
+		}
+		else
+		{
+			System.out.println("une erreur à eu lieu au niveau de la base de donnée, la transaction est annulée");
+		}
 	}
 	
 	/**************************
