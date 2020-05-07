@@ -1,14 +1,12 @@
 package Metier;
 
-import java.util.ArrayList;
-
 import Factory.ClientFactory;
 import Factory.CompteFactory;
 
 public class Banque {
 	
 	ClientFactory clFact;
-	ArrayList<CompteFactory> numCompte = new ArrayList<CompteFactory>();
+	CompteFactory cmFact;
 			
 	/**************************
 	 *    GETTER & SETTER     *
