@@ -1,4 +1,4 @@
-package Modeles;
+package Metier;
 
 public class CompteAvecDecouvert extends Compte {
 

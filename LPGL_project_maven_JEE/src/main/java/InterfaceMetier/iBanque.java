@@ -1,4 +1,4 @@
-package InterfaceModeles;
+package InterfaceMetier;
 
 public interface iBanque {
 	/**************************

@@ -1,15 +1,18 @@
-package InterfaceModeles;
+package InterfaceMetier;
 
-public interface iCompteAvecDecouvert {
+public interface iClient {
 	/**************************
 	 *    GETTER & SETTER     *
 	 **************************/
-	public void setDecouvertAutorise(Double dA);
-	public double getDecouvertAutoriese();
+	public void setNumeroClient(String num_Client);
+	public String getNumeroClient();
+	public void setAdresse(String ad);
+	public String getAdresse();
+	public void setNom(String nm);
+	public String getNom();
 	/**************************
 	 *        FUNCTION        *
 	 **************************/
-	public void debiter(double montant);
 	/**************************
 	 *    PRIVATE FUNCTION    *
 	 **************************/
