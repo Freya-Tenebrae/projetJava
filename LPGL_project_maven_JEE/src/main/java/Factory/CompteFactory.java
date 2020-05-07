@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import Dao.DaoCompte;
 import Metier.Compte;
 import Metier.CompteAvecDecouvert;
-import Metier.CompteSansDecouvert;
 
 public class CompteFactory {
 	
@@ -16,7 +15,7 @@ public class CompteFactory {
 		Compte compte;
 		if (decouvert == 0)
 		{
-			compte = new CompteSansDecouvert(num, dao.getSoldeCompteById(num));
+			compte = new Compte(num, dao.getSoldeCompteById(num));
 		}
 		else
 		{

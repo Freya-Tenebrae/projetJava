@@ -13,11 +13,11 @@ public class CompteAvecDecouvert extends Compte {
 	 *    GETTER & SETTER     *
 	 **************************/
 	
-	public void setDecouvertAutorise(Double dA) {
+	public void setDecouvertAutoriser(Double dA) {
 		decouvertAutorise = dA;
 	}
 	
-	public double getDecouvertAutoriese() {
+	public double getDecouvertAutoriser() {
 		return decouvertAutorise;
 	}
 	
@@ -26,7 +26,7 @@ public class CompteAvecDecouvert extends Compte {
 	 *        FUNCTION        *
 	 **************************/
 	
-	public void debiter(double montant) {
+	public boolean debiter(double montant) {
 		if ((solde + decouvertAutorise) > montant)
 		{
 			System.out.println("le compte possède un solde sufisant pour débiter le montant");
@@ -35,6 +35,7 @@ public class CompteAvecDecouvert extends Compte {
 				solde = solde - montant;
 				System.out.println("la dransaction s'est bien déroulée");
 				System.out.println("le solde restant est de " + solde + " euro.");
+				return true;
 			}
 			else
 			{
@@ -45,6 +46,7 @@ public class CompteAvecDecouvert extends Compte {
 		{
 			System.out.println("le compte ne possède pas un solde sufisant pour débiter le montant");
 		}
+		return false;
 	}	
 	
 	/**************************

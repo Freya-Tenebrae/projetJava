@@ -11,8 +11,8 @@ public interface ICompte {
 	/**************************
 	 *        FUNCTION        *
 	 **************************/
-	public void debiter(double montant);
-	public void crediter(double montant);
+	public boolean debiter(double montant);
+	public boolean crediter(double montant);
 	/**************************
 	 *    PRIVATE FUNCTION    *
 	 **************************/

@@ -9,7 +9,7 @@ public interface iCompteAvecDecouvert {
 	/**************************
 	 *        FUNCTION        *
 	 **************************/
-	public void debiter(double montant);
+	public boolean debiter(double montant);
 	/**************************
 	 *    PRIVATE FUNCTION    *
 	 **************************/
